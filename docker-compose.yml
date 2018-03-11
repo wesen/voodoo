@@ -1,6 +1,9 @@
-web:
-  build: ./web
-  ports:
-  - "5000:5000"
-  volumes:
-  - .:/code
+version: "3"
+
+services:
+  web:
+    build: ./web
+    environment:
+      - FLASK_DEBUG=1
+    ports: ['5000:5000']
+    volumes: ['./web:/app']
